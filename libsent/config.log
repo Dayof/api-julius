@@ -1,0 +1,105 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:713: checking host system type
+configure:735: checking host specific optimization flag
+configure:751: checking for gcc
+configure:864: checking whether the C compiler (gcc -O6 -fomit-frame-pointer ) works
+configure:880: gcc -o conftest -O6 -fomit-frame-pointer   conftest.c  1>&5
+configure:906: checking whether the C compiler (gcc -O6 -fomit-frame-pointer ) is a cross-compiler
+configure:911: checking whether we are using GNU C
+configure:920: gcc -E conftest.c
+configure:939: checking whether gcc accepts -g
+configure:971: checking how to run the C preprocessor
+configure:992: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1063: checking for a BSD compatible install
+configure:1118: checking for rm
+configure:1153: checking for ar
+configure:1188: checking for ranlib
+configure:1217: checking for ANSI C header files
+configure:1230: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1297: gcc -o conftest -O6 -fomit-frame-pointer   conftest.c  1>&5
+configure: In function 'main':
+configure:1292: warning: incompatible implicit declaration of built-in function 'exit'
+configure:1324: checking for unistd.h
+configure:1334: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1362: checking whether byte ordering is bigendian
+configure:1380: gcc -c -O6 -fomit-frame-pointer  conftest.c 1>&5
+configure:1395: gcc -c -O6 -fomit-frame-pointer  conftest.c 1>&5
+configure: In function 'main':
+configure:1390: error: 'not' undeclared (first use in this function)
+configure:1390: error: (Each undeclared identifier is reported only once
+configure:1390: error: for each function it appears in.)
+configure:1390: error: expected ';' before 'big'
+configure: failed program was:
+#line 1384 "configure"
+#include "confdefs.h"
+#include <sys/types.h>
+#include <sys/param.h>
+int main() {
+
+#if BYTE_ORDER != BIG_ENDIAN
+ not big endian
+#endif
+; return 0; }
+configure:1452: checking for working const
+configure:1506: gcc -c -O6 -fomit-frame-pointer  conftest.c 1>&5
+configure:1527: checking for socklen_t
+configure:1538: gcc -c -O6 -fomit-frame-pointer  conftest.c 1>&5
+configure:1554: checking for gethostbyname
+configure:1582: gcc -o conftest -O6 -fomit-frame-pointer   conftest.c  1>&5
+configure:1649: checking for connect
+configure:1677: gcc -o conftest -O6 -fomit-frame-pointer   conftest.c  1>&5
+configure:1775: checking for strcasecmp
+configure:1803: gcc -o conftest -O6 -fomit-frame-pointer   conftest.c  1>&5
+configure:1787: warning: conflicting types for built-in function 'strcasecmp'
+configure:1830: checking for sleep
+configure:1858: gcc -o conftest -O6 -fomit-frame-pointer   conftest.c  1>&5
+configure:1890: checking for alsa/asoundlib.h
+configure:1900: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1974: checking for sys/soundcard.h
+configure:1984: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2058: checking for esd.h
+configure:2068: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2098: checking for input device type
+configure:2659: checking for DatLink/NetAudio support
+configure:2673: gcc -E  -Iauto/include conftest.c >/dev/null 2>conftest.out
+configure:2669:22: error: netaudio.h: No such file or directory
+configure: failed program was:
+#line 2668 "configure"
+#include "confdefs.h"
+#include <netaudio.h>
+configure:2698: checking for deflate in -lz
+configure:2717: gcc -o conftest -O6 -fomit-frame-pointer   conftest.c -lz   1>&5
+configure:2736: checking for zlib.h
+configure:2746: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2838: checking for sf_open in -lsndfile
+configure:2857: gcc -o conftest -O6 -fomit-frame-pointer   conftest.c -lsndfile   1>&5
+/usr/bin/ld: cannot find -lsndfile
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 2846 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char sf_open();
+
+int main() {
+sf_open()
+; return 0; }
+configure:2928: checking for sf_open_read in -lsndfile
+configure:2947: gcc -o conftest -O6 -fomit-frame-pointer   conftest.c -lsndfile   1>&5
+/usr/bin/ld: cannot find -lsndfile
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 2936 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char sf_open_read();
+
+int main() {
+sf_open_read()
+; return 0; }

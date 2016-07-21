@@ -1,0 +1,265 @@
+STAT: include config: clara.jconf
+Stat: para: parsing HTK Config file: edaz.conf
+Warning: para: "USESILDET" ignored (not supported, or irrelevant)
+Stat: para: ENORMALISE=T
+Warning: para: NUMCEPS skipped (will be determined by AM header)
+Stat: para: CEPLIFTER=22
+Stat: para: NUMCHANS=26
+Stat: para: PREEMCOEF=0.97
+Stat: para: USEHAMMING=T
+Stat: para: WINDOWSIZE=250000.0
+Warning: para: "SAVEWITHCRC" ignored (not supported, or irrelevant)
+Warning: para: "SAVECOMPRESSED" ignored (not supported, or irrelevant)
+Stat: para: TARGETRATE=100000.0
+Warning: para: TARGETKIND skipped (will be determined by AM header)
+Stat: para: ZMEANSOURCE=T
+Warning: para: "SOURCEFORMAT" ignored (not supported, or irrelevant)
+Warning: para: "SOURCEKIND" ignored (not supported, or irrelevant)
+Warning: no SOURCERATE found
+Warning: assume source waveform sample rate to 625 (16kHz)
+WARNING: m_chkparam: "-lmp" only for N-gram, ignored
+WARNING: m_chkparam: "-lmp2" only for N-gram, ignored
+WARNING: m_chkparam: "-transp" only for N-gram, ignored
+STAT: jconf successfully finalized
+STAT: *** loading AM00 _default
+Stat: init_phmm: Reading in HMM definition
+Stat: binhmm-header: analysis parameter embedded
+Stat: binhmm-header: variance inversed
+Stat: rd_para: found embedded acoutic parameter (ver.3)
+Stat: read_binhmm: has acoutic analysis configurations in its header
+Stat: read_binhmm: has inversed variances
+Stat: read_binhmm: binary format HMM definition
+Stat: check_hmm_restriction: an HMM with several arcs from initial state found: "sp"
+Stat: read_binhmm: this HMM requires multipath handling at decoding
+Stat: init_phmm: defined HMMs:  8980
+Stat: init_phmm: loading ascii hmmlist
+Stat: init_phmm: logical names: 59321 in HMMList
+Stat: init_phmm: base phones:    40 used in logical
+Stat: init_phmm: finished reading HMM definitions
+STAT: making pseudo bi/mono-phone for IW-triphone
+Stat: hmm_lookup: 3080 pseudo phones are added to logical HMM list
+STAT: *** AM00 _default loaded
+STAT: *** loading LM00 _default
+STAT: reading [clara.dfa] and [clara.dict]...
+Stat: init_voca: read 72 words
+STAT: done
+STAT: Gram #0 clara registered
+STAT: Gram #0 clara: new grammar loaded, now mash it up for recognition
+STAT: Gram #0 clara: extracting category-pair constraint for the 1st pass
+STAT: Gram #0 clara: installed
+STAT: Gram #0 clara: turn on active
+STAT: grammar update completed
+STAT: *** LM00 _default loaded
+STAT: ------
+STAT: All models are ready, go for final fusion
+STAT: [1] create MFCC extraction instance(s)
+STAT: *** create MFCC calculation modules from AM
+STAT: AM 0 _default: create a new module MFCC01
+STAT: 1 MFCC modules created
+STAT: [2] create recognition processing instance(s) with AM and LM
+STAT: composing recognizer instance SR00 _default (AM00 _default, LM00 _default)
+STAT: Building HMM lexicon tree
+STAT: lexicon size: 1234 nodes
+STAT: coordination check passed
+STAT: wchmm (re)build completed
+STAT: SR00 _default composed
+STAT: [3] initialize for acoustic HMM calculation
+Stat: outprob_init: state-level mixture PDFs, use calc_mix()
+Stat: addlog: generating addlog table (size = 1953 kB)
+Stat: addlog: addlog table generated
+STAT: [4] prepare MFCC storage(s)
+STAT: [5] prepare for real-time decoding
+STAT: All init successfully done
+
+STAT: ###### initialize input device
+----------------------- System Information begin ---------------------
+JuliusLib rev.4.1.3 (fast)
+
+Engine specification:
+ -  Base setup   : fast
+ -  Supported LM : DFA, N-gram, Word
+ -  Extension    :
+ -  Compiled by  : gcc -O6 -fomit-frame-pointer
+
+------------------------------------------------------------
+Configuration of Modules
+
+ Number of defined modules: AM=1, LM=1, SR=1
+
+ Acoustic Model (with input parameter spec.):
+ - AM00 "_default"
+	hmmfilename=LaPSAM1.5.am.bin
+	hmmmapfilename=LaPSAM1.5.tiedlist
+
+ Language Model:
+ - LM00 "_default"
+	grammar #1:
+	    dfa  = clara.dfa
+	    dict = clara.dict
+
+ Recognizer:
+ - SR00 "_default" (AM00, LM00)
+
+------------------------------------------------------------
+Speech Analysis Module(s)
+
+[MFCC01]  for [AM00 _default]
+
+ Acoustic analysis condition:
+	       parameter = MFCC_E_D_A_Z (39 dim. from 12 cepstrum + energy with CMN)
+	sample frequency = 16000 Hz
+	   sample period =  625  (1 = 100ns)
+	     window size =  400 samples (25.0 ms)
+	     frame shift =  160 samples (10.0 ms)
+	    pre-emphasis = 0.97
+	    # filterbank = 26
+	   cepst. lifter = 22
+	      raw energy = True
+	energy normalize = True (scale = 0.1, silence floor = 50.0 dB)
+	    delta window = 2 frames (20.0 ms) around
+	      acc window = 2 frames (20.0 ms) around
+	     hi freq cut = OFF
+	     lo freq cut = OFF
+	 zero mean frame = ON
+	       use power = OFF
+	             CVN = OFF
+	            VTLN = OFF
+    spectral subtraction = off
+  cepstral normalization = real-time MAP-CMN
+	 base setup from = binhmm-embedded, then overridden by HTK Config and defaults
+
+ MAP-CMN:
+      initial cep. data   = none
+      beginning data weight = 100.00
+    beginning data update = yes, from last inputs at each input
+
+------------------------------------------------------------
+Acoustic Model(s)
+
+[AM00 "_default"]
+
+ HMM Info:
+    8980 models, 4629 states, 4629 mpdfs, 64806 Gaussians are defined
+	      model type = context dependency handling ON
+      training parameter = MFCC_E_D_A_Z
+	   vector length = 39
+	number of stream = 1
+	     stream info = [0-38]
+	cov. matrix type = DIAGC
+	   duration type = NULLD
+	max mixture size = 14 Gaussians
+     max length of model = 5 states
+     logical base phones = 40
+       model skip trans. = exist, require multi-path handling
+      skippable models = sp (1 model(s))
+
+ AM Parameters:
+        Gaussian pruning = safe  (-gprune)
+  top N mixtures to calc = 2 / 0  (-tmix)
+    short pause HMM name = "sp" specified, "sp" applied (physical)  (-sp)
+  cross-word CD on pass1 = handle by approx. (use average prob. of same LC)
+   sp transition penalty = -1.0
+
+------------------------------------------------------------
+Language Model(s)
+
+[LM00 "_default"] type=grammar
+
+ DFA grammar info:
+      13 nodes, 31 arcs, 27 terminal(category) symbols
+      category-pair matrix: 188 bytes (2644 bytes allocated)
+
+ Vocabulary Info:
+        vocabulary size  = 72 words, 370 models
+        average word len = 5.1 models, 15.4 states
+       maximum state num = 30 nodes per word
+       transparent words = not exist
+       words under class = not exist
+
+ Parameters:
+   found sp category IDs =
+
+------------------------------------------------------------
+Recognizer(s)
+
+[SR00 "_default"]  AM00 "_default"  +  LM00 "_default"
+
+ Lexicon tree:
+	 total node num =   1234
+	  root node num =     61
+	  leaf node num =     72
+
+	(-penalty1) IW penalty1 = -5.0
+	(-penalty2) IW penalty2 = +0.0
+	(-cmalpha)CM alpha coef = 0.050000
+
+	 inter-word short pause = on (append "sp" for each word tail)
+	  sp transition penalty = -1.0
+ Search parameters: 
+	    multi-path handling = yes, multi-path mode enabled
+	(-b) trellis beam width = 1234
+	(-n)search candidate num= 1
+	(-s)  search stack size = 500
+	(-m)    search overflow = after 2000 hypothesis poped
+	        2nd pass method = searching sentence, generating N-best
+	(-b2)  pass2 beam width = 200
+	(-lookuprange)lookup range= 5  (tm-5 <= t <tm+5)
+	(-sb)2nd scan beamthres = 300.0 (in logscore)
+	(-n)        search till = 1 candidates found
+	(-output)    and output = 1 candidates out of above
+	 IWCD handling:
+	   1st pass: approximation (use average prob. of same LC)
+	   2nd pass: loose (apply when hypo. is popped and scanned)
+	 all possible words will be expanded in 2nd pass
+	 build_wchmm2() used
+	 lcdset limited by word-pair constraint
+	progressive output on 1st pass
+	short pause segmentation = off
+	        progout interval = 300 msec
+	fall back on search fail = off, returns search failure
+
+------------------------------------------------------------
+Decoding algorithm:
+
+	1st pass input processing = (forced) real time, on-the-fly
+	1st pass method = 1-best approx. generating indexed trellis
+	output word confidence measure based on search-time scores
+
+------------------------------------------------------------
+FrontEnd:
+
+ Input stream:
+	             input type = waveform
+	           input source = microphone
+	    device API          = default
+	          sampling freq. = 16000 Hz
+	         threaded A/D-in = supported, on
+	   zero frames stripping = on
+	         silence cutting = on
+	             level thres = 3000 / 32767
+	         zerocross thres = 150 / sec.
+	             head margin = 400 msec.
+	             tail margin = 400 msec.
+	    long-term DC removal = on (will compute from first 3.0 sec)
+	      reject short input = < 250 msec
+
+----------------------- System Information end -----------------------
+
+	*************************************************************
+	* NOTICE: The first input may not be recognized, since      *
+	*         no initial CMN parameter is available on startup. *
+	* for MFCC01*
+	*************************************************************
+	*************************************************************
+	* NOTICE: Energy normalization is activated on live input:  *
+	*         maximum energy of LAST INPUT will be used for it. *
+	*         So, the first input will not be recognized.       *
+	* for MFCC01*
+	*************************************************************
+Stat: capture audio at 16000Hz
+Stat: adin_alsa: latency set to 32 msec (chunk = 512 bytes)
+Error: adin_alsa: unable to get pcm info from card control
+Warning: adin_alsa: skip output of detailed audio device info
+STAT: AD-in thread created
+Warning: strip: sample 0-59 has zero value, stripped
+STAT: 00 _default: 50 generated, 50 pushed, 4 nodes popped in 244

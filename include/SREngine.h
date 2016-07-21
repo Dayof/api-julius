@@ -11,10 +11,7 @@
 
 #include <iostream>
 #include <RecoResult.h>
-
-extern "C" {
 #include <julius/julius.h>
-}
 
 namespace LapsAPI{
 
